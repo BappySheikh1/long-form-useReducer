@@ -2,32 +2,33 @@ import React from "react";
 import { useState } from "react";
 
 const ShortForm = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  const submit = (event) => {
-    event.preventDefault();
-    const data = {
-      firstName,
-      lastName,
-      email,
-      password,
-    };
-    console.log(data);
-  };
+  const [firstName, setFirstName]=useState("")
+  const [lastName, setLastName]=useState("")
+  const [email, setEmail]=useState("")
+  const [password, setPassword]=useState("")
+
+  const handleSubmit =(event)=>{
+   event.preventDefault()
+  const data={
+    firstName,
+    lastName,
+    email,
+    password
+  }
+  console.log(data);
+  }
 
   return (
     <div className='h-screen w-screen flex justify-center items-center space-y-6'>
-      <form className='space-y-6 shadow-md p-10' onSubmit={submit}>
+      <form className='space-y-6 shadow-md p-10' onSubmit={handleSubmit}>
         <div className='flex flex-col max-w-xs'>
           <label htmlFor='name'>First Name</label>
           <input
             type='text'
             name='name'
             id='name'
-            onBlur={(e) => setFirstName(e.target.value)}
+           onBlur={(e)=>setFirstName(e.target.value)}
           />
         </div>
         <div className='flex flex-col max-w-xs'>
@@ -35,17 +36,17 @@ const ShortForm = () => {
           <input
             type='text'
             name='name'
-            id='name'
-            onBlur={(e) => setLastName(e.target.value)}
+            id='last'
+           onBlur={(e)=>setLastName(e.target.value)}
           />
         </div>
         <div className='flex flex-col max-w-xs'>
           <label htmlFor='name'>Email</label>
           <input
-            type='text'
+            type='email'
             name='name'
-            id='name'
-            onBlur={(e) => setEmail(e.target.value)}
+            id='email'
+           onBlur={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className='flex flex-col max-w-xs'>
@@ -53,8 +54,8 @@ const ShortForm = () => {
           <input
             type='password'
             name='name'
-            id='name'
-            onBlur={(e) => setPassword(e.target.value)}
+            id='password'
+           onBlur={(e)=>setPassword(e.target.value)}
           />
         </div>
         <button

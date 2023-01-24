@@ -1,7 +1,11 @@
 import LongForm from "./pages/LongForm";
+import ShortForm from "./pages/ShortForm";
 
 function App() {
-  return <LongForm />;
+  return <div>
+    {/* <LongForm /> */}
+    <ShortForm />
+  </div>;
 }
 
 export default App;
